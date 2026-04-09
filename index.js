@@ -47,13 +47,13 @@ const bookStore = {
 const bookStoreTitle = document.querySelector('header')
 bookStoreTitle.textContent = bookStore.name
 
-const bookList = document.querySelector('main')
+const bookList = document.querySelector('#book-list')
 
 bookStore.books.forEach(book => {
-    const bookItem = document.createElement('div')
-    bookItem.classList.add('book-item')
+    const bookItem = document.createElement('li')
+    bookItem.id = `book-${book.id}`
 
-    const bookTitle = document.createElement('h2')
+    const bookTitle = document.createElement('h3')
     bookTitle.textContent = book.title
 
     const bookAuthor = document.createElement('p')
@@ -63,15 +63,11 @@ bookStore.books.forEach(book => {
     bookImage.src = book.imageUrl
     bookImage.alt = `${book.title} cover`
 
-    bookList.appendChild(bookItem)
-    
     bookItem.appendChild(bookTitle)
-    bookItem.appendChild(bookAuthor)        
+    bookItem.appendChild(bookAuthor)
     bookItem.appendChild(bookImage)
 
-
-
-
+    bookList.appendChild(bookItem)
 })
 
 
