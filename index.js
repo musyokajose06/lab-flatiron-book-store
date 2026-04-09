@@ -45,7 +45,7 @@ const bookStore = {
 
 // Write your code here!
 const bookStoreTitle = document.querySelector('header')
-bookStoreTitle.textContent = bookStore.name
+bookStoreTitle.innerHTML = `<h1>${bookStore.name}</h1>`
 
 const bookList = document.querySelector('#book-list')
 
